@@ -1,0 +1,1065 @@
+18:44:51 **** Incremental Build of configuration Debug for project LED ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/liquidcrystal_i2c.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/liquidcrystal_i2c.d" -MT"Core/Src/liquidcrystal_i2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/liquidcrystal_i2c.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+In file included from ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:288,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h:29,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32l4xx_hal_conf.h:258,
+                 from ../Core/Inc/liquidcrystal_i2c.h:4,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:636:1: error: unknown type name 'HAL_StatusTypeDef'
+  636 | HAL_StatusTypeDef HAL_Init(void);
+      | ^~~~~~~~~~~~~~~~~
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:637:1: error: unknown type name 'HAL_StatusTypeDef'
+  637 | HAL_StatusTypeDef HAL_DeInit(void);
+      | ^~~~~~~~~~~~~~~~~
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/main.c:25:
+../Core/Inc/stm32f4xx_hal.h:50:3: error: redeclaration of enumerator 'HAL_TICK_FREQ_10HZ'
+   50 |   HAL_TICK_FREQ_10HZ         = 100U,
+      |   ^~~~~~~~~~~~~~~~~~
+In file included from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:49:3: note: previous definition of 'HAL_TICK_FREQ_10HZ' with type 'enum <anonymous>'
+   49 |   HAL_TICK_FREQ_10HZ         = 100U,
+      |   ^~~~~~~~~~~~~~~~~~
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/main.c:25:
+../Core/Inc/stm32f4xx_hal.h:51:3: error: redeclaration of enumerator 'HAL_TICK_FREQ_100HZ'
+   51 |   HAL_TICK_FREQ_100HZ        = 10U,
+      |   ^~~~~~~~~~~~~~~~~~~
+In file included from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:50:3: note: previous definition of 'HAL_TICK_FREQ_100HZ' with type 'enum <anonymous>'
+   50 |   HAL_TICK_FREQ_100HZ        = 10U,
+      |   ^~~~~~~~~~~~~~~~~~~
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/main.c:25:
+../Core/Inc/stm32f4xx_hal.h:52:3: error: redeclaration of enumerator 'HAL_TICK_FREQ_1KHZ'
+   52 |   HAL_TICK_FREQ_1KHZ         = 1U,
+      |   ^~~~~~~~~~~~~~~~~~
+In file included from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:51:3: note: previous definition of 'HAL_TICK_FREQ_1KHZ' with type 'enum <anonymous>'
+   51 |   HAL_TICK_FREQ_1KHZ         = 1U,
+      |   ^~~~~~~~~~~~~~~~~~
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/main.c:25:
+../Core/Inc/stm32f4xx_hal.h:53:3: error: redeclaration of enumerator 'HAL_TICK_FREQ_DEFAULT'
+   53 |   HAL_TICK_FREQ_DEFAULT      = HAL_TICK_FREQ_1KHZ
+      |   ^~~~~~~~~~~~~~~~~~~~~
+In file included from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:52:3: note: previous definition of 'HAL_TICK_FREQ_DEFAULT' with type 'enum <anonymous>'
+   52 |   HAL_TICK_FREQ_DEFAULT      = HAL_TICK_FREQ_1KHZ
+      |   ^~~~~~~~~~~~~~~~~~~~~
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/main.c:25:
+../Core/Inc/stm32f4xx_hal.h:54:3: error: conflicting types for 'HAL_TickFreqTypeDef'; have 'enum <anonymous>'
+   54 | } HAL_TickFreqTypeDef;
+      |   ^~~~~~~~~~~~~~~~~~~
+In file included from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:53:3: note: previous declaration of 'HAL_TickFreqTypeDef' with type 'HAL_TickFreqTypeDef'
+   53 | } HAL_TickFreqTypeDef;
+      |   ^~~~~~~~~~~~~~~~~~~
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/main.c:25:
+../Core/Inc/stm32f4xx_hal.h:70: warning: "__HAL_DBGMCU_FREEZE_TIM2" redefined
+   70 | #define __HAL_DBGMCU_FREEZE_TIM2()           (DBGMCU->APB1FZ |= (DBGMCU_APB1_FZ_DBG_TIM2_STOP))
+      | 
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:640:1: error: unknown type name 'HAL_StatusTypeDef'
+  640 | HAL_StatusTypeDef HAL_InitTick (uint32_t TickPriority);
+      | ^~~~~~~~~~~~~~~~~
+In file included from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:271: note: this is the location of the previous definition
+  271 | #define __HAL_DBGMCU_FREEZE_TIM2()           SET_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_TIM2_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/main.c:25:
+../Core/Inc/stm32f4xx_hal.h:71: warning: "__HAL_DBGMCU_FREEZE_TIM3" redefined
+   71 | #define __HAL_DBGMCU_FREEZE_TIM3()           (DBGMCU->APB1FZ |= (DBGMCU_APB1_FZ_DBG_TIM3_STOP))
+      | 
+In file included from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:276: note: this is the location of the previous definition
+  276 | #define __HAL_DBGMCU_FREEZE_TIM3()           SET_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_TIM3_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/main.c:25:
+../Core/Inc/stm32f4xx_hal.h:72: warning: "__HAL_DBGMCU_FREEZE_TIM4" redefined
+   72 | #define __HAL_DBGMCU_FREEZE_TIM4()           (DBGMCU->APB1FZ |= (DBGMCU_APB1_FZ_DBG_TIM4_STOP))
+      | 
+In file included from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:281: note: this is the location of the previous definition
+  281 | #define __HAL_DBGMCU_FREEZE_TIM4()           SET_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_TIM4_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/main.c:25:
+../Core/Inc/stm32f4xx_hal.h:73: warning: "__HAL_DBGMCU_FREEZE_TIM5" redefined
+   73 | #define __HAL_DBGMCU_FREEZE_TIM5()           (DBGMCU->APB1FZ |= (DBGMCU_APB1_FZ_DBG_TIM5_STOP))
+      | 
+In file included from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:286: note: this is the location of the previous definition
+  286 | #define __HAL_DBGMCU_FREEZE_TIM5()           SET_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_TIM5_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/main.c:25:
+../Core/Inc/stm32f4xx_hal.h:74: warning: "__HAL_DBGMCU_FREEZE_TIM6" redefined
+   74 | #define __HAL_DBGMCU_FREEZE_TIM6()           (DBGMCU->APB1FZ |= (DBGMCU_APB1_FZ_DBG_TIM6_STOP))
+      | 
+In file included from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:291: note: this is the location of the previous definition
+  291 | #define __HAL_DBGMCU_FREEZE_TIM6()           SET_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_TIM6_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/main.c:25:
+../Core/Inc/stm32f4xx_hal.h:75: warning: "__HAL_DBGMCU_FREEZE_TIM7" redefined
+   75 | #define __HAL_DBGMCU_FREEZE_TIM7()           (DBGMCU->APB1FZ |= (DBGMCU_APB1_FZ_DBG_TIM7_STOP))
+      | 
+In file included from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:296: note: this is the location of the previous definition
+  296 | #define __HAL_DBGMCU_FREEZE_TIM7()           SET_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_TIM7_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/main.c:25:
+../Core/Inc/stm32f4xx_hal.h:79: warning: "__HAL_DBGMCU_FREEZE_RTC" redefined
+   79 | #define __HAL_DBGMCU_FREEZE_RTC()            (DBGMCU->APB1FZ |= (DBGMCU_APB1_FZ_DBG_RTC_STOP))
+      | 
+In file included from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:301: note: this is the location of the previous definition
+  301 | #define __HAL_DBGMCU_FREEZE_RTC()            SET_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_RTC_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/main.c:25:
+../Core/Inc/stm32f4xx_hal.h:80: warning: "__HAL_DBGMCU_FREEZE_WWDG" redefined
+   80 | #define __HAL_DBGMCU_FREEZE_WWDG()           (DBGMCU->APB1FZ |= (DBGMCU_APB1_FZ_DBG_WWDG_STOP))
+      | 
+In file included from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:306: note: this is the location of the previous definition
+  306 | #define __HAL_DBGMCU_FREEZE_WWDG()           SET_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_WWDG_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/main.c:25:
+../Core/Inc/stm32f4xx_hal.h:81: warning: "__HAL_DBGMCU_FREEZE_IWDG" redefined
+   81 | #define __HAL_DBGMCU_FREEZE_IWDG()           (DBGMCU->APB1FZ |= (DBGMCU_APB1_FZ_DBG_IWDG_STOP))
+      | 
+In file included from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:311: note: this is the location of the previous definition
+  311 | #define __HAL_DBGMCU_FREEZE_IWDG()           SET_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_IWDG_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/main.c:25:
+../Core/Inc/stm32f4xx_hal.h:82: warning: "__HAL_DBGMCU_FREEZE_I2C1_TIMEOUT" redefined
+   82 | #define __HAL_DBGMCU_FREEZE_I2C1_TIMEOUT()   (DBGMCU->APB1FZ |= (DBGMCU_APB1_FZ_DBG_I2C1_SMBUS_TIMEOUT))
+      | 
+In file included from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:316: note: this is the location of the previous definition
+  316 | #define __HAL_DBGMCU_FREEZE_I2C1_TIMEOUT()   SET_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_I2C1_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/main.c:25:
+../Core/Inc/stm32f4xx_hal.h:83: warning: "__HAL_DBGMCU_FREEZE_I2C2_TIMEOUT" redefined
+   83 | #define __HAL_DBGMCU_FREEZE_I2C2_TIMEOUT()   (DBGMCU->APB1FZ |= (DBGMCU_APB1_FZ_DBG_I2C2_SMBUS_TIMEOUT))
+      | 
+In file included from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:321: note: this is the location of the previous definition
+  321 | #define __HAL_DBGMCU_FREEZE_I2C2_TIMEOUT()   SET_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_I2C2_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/main.c:25:
+../Core/Inc/stm32f4xx_hal.h:84: warning: "__HAL_DBGMCU_FREEZE_I2C3_TIMEOUT" redefined
+   84 | #define __HAL_DBGMCU_FREEZE_I2C3_TIMEOUT()   (DBGMCU->APB1FZ |= (DBGMCU_APB1_FZ_DBG_I2C3_SMBUS_TIMEOUT))
+      | 
+In file included from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:326: note: this is the location of the previous definition
+  326 | #define __HAL_DBGMCU_FREEZE_I2C3_TIMEOUT()   SET_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_I2C3_STOP)
+      | 
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:655:1: error: unknown type name 'HAL_StatusTypeDef'
+  655 | HAL_StatusTypeDef  HAL_SetTickFreq(HAL_TickFreqTypeDef Freq);
+      | ^~~~~~~~~~~~~~~~~
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/main.c:25:
+../Core/Inc/stm32f4xx_hal.h:85: warning: "__HAL_DBGMCU_FREEZE_CAN1" redefined
+   85 | #define __HAL_DBGMCU_FREEZE_CAN1()           (DBGMCU->APB1FZ |= (DBGMCU_APB1_FZ_DBG_CAN1_STOP))
+      | 
+In file included from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:336: note: this is the location of the previous definition
+  336 | #define __HAL_DBGMCU_FREEZE_CAN1()           SET_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_CAN_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/main.c:25:
+../Core/Inc/stm32f4xx_hal.h:87: warning: "__HAL_DBGMCU_FREEZE_TIM1" redefined
+   87 | #define __HAL_DBGMCU_FREEZE_TIM1()           (DBGMCU->APB2FZ |= (DBGMCU_APB2_FZ_DBG_TIM1_STOP))
+      | 
+In file included from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:356: note: this is the location of the previous definition
+  356 | #define __HAL_DBGMCU_FREEZE_TIM1()           SET_BIT(DBGMCU->APB2FZ, DBGMCU_APB2FZ_DBG_TIM1_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/main.c:25:
+../Core/Inc/stm32f4xx_hal.h:88: warning: "__HAL_DBGMCU_FREEZE_TIM8" redefined
+   88 | #define __HAL_DBGMCU_FREEZE_TIM8()           (DBGMCU->APB2FZ |= (DBGMCU_APB2_FZ_DBG_TIM8_STOP))
+      | 
+In file included from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:361: note: this is the location of the previous definition
+  361 | #define __HAL_DBGMCU_FREEZE_TIM8()           SET_BIT(DBGMCU->APB2FZ, DBGMCU_APB2FZ_DBG_TIM8_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/main.c:25:
+../Core/Inc/stm32f4xx_hal.h:93: warning: "__HAL_DBGMCU_UNFREEZE_TIM2" redefined
+   93 | #define __HAL_DBGMCU_UNFREEZE_TIM2()           (DBGMCU->APB1FZ &= ~(DBGMCU_APB1_FZ_DBG_TIM2_STOP))
+      | 
+In file included from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:272: note: this is the location of the previous definition
+  272 | #define __HAL_DBGMCU_UNFREEZE_TIM2()         CLEAR_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_TIM2_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/main.c:25:
+../Core/Inc/stm32f4xx_hal.h:94: warning: "__HAL_DBGMCU_UNFREEZE_TIM3" redefined
+   94 | #define __HAL_DBGMCU_UNFREEZE_TIM3()           (DBGMCU->APB1FZ &= ~(DBGMCU_APB1_FZ_DBG_TIM3_STOP))
+      | 
+In file included from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:277: note: this is the location of the previous definition
+  277 | #define __HAL_DBGMCU_UNFREEZE_TIM3()         CLEAR_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_TIM3_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/main.c:25:
+../Core/Inc/stm32f4xx_hal.h:95: warning: "__HAL_DBGMCU_UNFREEZE_TIM4" redefined
+   95 | #define __HAL_DBGMCU_UNFREEZE_TIM4()           (DBGMCU->APB1FZ &= ~(DBGMCU_APB1_FZ_DBG_TIM4_STOP))
+      | 
+In file included from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:282: note: this is the location of the previous definition
+  282 | #define __HAL_DBGMCU_UNFREEZE_TIM4()         CLEAR_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_TIM4_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/main.c:25:
+../Core/Inc/stm32f4xx_hal.h:96: warning: "__HAL_DBGMCU_UNFREEZE_TIM5" redefined
+   96 | #define __HAL_DBGMCU_UNFREEZE_TIM5()           (DBGMCU->APB1FZ &= ~(DBGMCU_APB1_FZ_DBG_TIM5_STOP))
+      | 
+In file included from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:287: note: this is the location of the previous definition
+  287 | #define __HAL_DBGMCU_UNFREEZE_TIM5()         CLEAR_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_TIM5_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/main.c:25:
+../Core/Inc/stm32f4xx_hal.h:97: warning: "__HAL_DBGMCU_UNFREEZE_TIM6" redefined
+   97 | #define __HAL_DBGMCU_UNFREEZE_TIM6()           (DBGMCU->APB1FZ &= ~(DBGMCU_APB1_FZ_DBG_TIM6_STOP))
+      | 
+In file included from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:292: note: this is the location of the previous definition
+  292 | #define __HAL_DBGMCU_UNFREEZE_TIM6()         CLEAR_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_TIM6_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/main.c:25:
+../Core/Inc/stm32f4xx_hal.h:98: warning: "__HAL_DBGMCU_UNFREEZE_TIM7" redefined
+   98 | #define __HAL_DBGMCU_UNFREEZE_TIM7()           (DBGMCU->APB1FZ &= ~(DBGMCU_APB1_FZ_DBG_TIM7_STOP))
+      | 
+In file included from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:297: note: this is the location of the previous definition
+  297 | #define __HAL_DBGMCU_UNFREEZE_TIM7()         CLEAR_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_TIM7_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/main.c:25:
+../Core/Inc/stm32f4xx_hal.h:102: warning: "__HAL_DBGMCU_UNFREEZE_RTC" redefined
+  102 | #define __HAL_DBGMCU_UNFREEZE_RTC()            (DBGMCU->APB1FZ &= ~(DBGMCU_APB1_FZ_DBG_RTC_STOP))
+      | 
+In file included from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:302: note: this is the location of the previous definition
+  302 | #define __HAL_DBGMCU_UNFREEZE_RTC()          CLEAR_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_RTC_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/main.c:25:
+../Core/Inc/stm32f4xx_hal.h:103: warning: "__HAL_DBGMCU_UNFREEZE_WWDG" redefined
+  103 | #define __HAL_DBGMCU_UNFREEZE_WWDG()           (DBGMCU->APB1FZ &= ~(DBGMCU_APB1_FZ_DBG_WWDG_STOP))
+      | 
+In file included from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:307: note: this is the location of the previous definition
+  307 | #define __HAL_DBGMCU_UNFREEZE_WWDG()         CLEAR_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_WWDG_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/main.c:25:
+../Core/Inc/stm32f4xx_hal.h:104: warning: "__HAL_DBGMCU_UNFREEZE_IWDG" redefined
+  104 | #define __HAL_DBGMCU_UNFREEZE_IWDG()           (DBGMCU->APB1FZ &= ~(DBGMCU_APB1_FZ_DBG_IWDG_STOP))
+      | 
+In file included from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:312: note: this is the location of the previous definition
+  312 | #define __HAL_DBGMCU_UNFREEZE_IWDG()         CLEAR_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_IWDG_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/main.c:25:
+../Core/Inc/stm32f4xx_hal.h:105: warning: "__HAL_DBGMCU_UNFREEZE_I2C1_TIMEOUT" redefined
+  105 | #define __HAL_DBGMCU_UNFREEZE_I2C1_TIMEOUT()   (DBGMCU->APB1FZ &= ~(DBGMCU_APB1_FZ_DBG_I2C1_SMBUS_TIMEOUT))
+      | 
+In file included from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:317: note: this is the location of the previous definition
+  317 | #define __HAL_DBGMCU_UNFREEZE_I2C1_TIMEOUT() CLEAR_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_I2C1_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/main.c:25:
+../Core/Inc/stm32f4xx_hal.h:106: warning: "__HAL_DBGMCU_UNFREEZE_I2C2_TIMEOUT" redefined
+  106 | #define __HAL_DBGMCU_UNFREEZE_I2C2_TIMEOUT()   (DBGMCU->APB1FZ &= ~(DBGMCU_APB1_FZ_DBG_I2C2_SMBUS_TIMEOUT))
+      | 
+In file included from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:322: note: this is the location of the previous definition
+  322 | #define __HAL_DBGMCU_UNFREEZE_I2C2_TIMEOUT() CLEAR_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_I2C2_STOP)
+      | 
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:699:1: error: unknown type name 'HAL_StatusTypeDef'
+  699 | HAL_StatusTypeDef HAL_SYSCFG_EnableVREFBUF(void);
+      | ^~~~~~~~~~~~~~~~~
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/main.c:25:
+../Core/Inc/stm32f4xx_hal.h:107: warning: "__HAL_DBGMCU_UNFREEZE_I2C3_TIMEOUT" redefined
+  107 | #define __HAL_DBGMCU_UNFREEZE_I2C3_TIMEOUT()   (DBGMCU->APB1FZ &= ~(DBGMCU_APB1_FZ_DBG_I2C3_SMBUS_TIMEOUT))
+      | 
+In file included from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:327: note: this is the location of the previous definition
+  327 | #define __HAL_DBGMCU_UNFREEZE_I2C3_TIMEOUT() CLEAR_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_I2C3_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/main.c:25:
+../Core/Inc/stm32f4xx_hal.h:108: warning: "__HAL_DBGMCU_UNFREEZE_CAN1" redefined
+  108 | #define __HAL_DBGMCU_UNFREEZE_CAN1()           (DBGMCU->APB1FZ &= ~(DBGMCU_APB1_FZ_DBG_CAN1_STOP))
+      | 
+In file included from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:337: note: this is the location of the previous definition
+  337 | #define __HAL_DBGMCU_UNFREEZE_CAN1()         CLEAR_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_CAN_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/main.c:25:
+../Core/Inc/stm32f4xx_hal.h:110: warning: "__HAL_DBGMCU_UNFREEZE_TIM1" redefined
+  110 | #define __HAL_DBGMCU_UNFREEZE_TIM1()           (DBGMCU->APB2FZ &= ~(DBGMCU_APB2_FZ_DBG_TIM1_STOP))
+      | 
+In file included from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:357: note: this is the location of the previous definition
+  357 | #define __HAL_DBGMCU_UNFREEZE_TIM1()         CLEAR_BIT(DBGMCU->APB2FZ, DBGMCU_APB2FZ_DBG_TIM1_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/main.c:25:
+../Core/Inc/stm32f4xx_hal.h:111: warning: "__HAL_DBGMCU_UNFREEZE_TIM8" redefined
+  111 | #define __HAL_DBGMCU_UNFREEZE_TIM8()           (DBGMCU->APB2FZ &= ~(DBGMCU_APB2_FZ_DBG_TIM8_STOP))
+      | 
+In file included from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:362: note: this is the location of the previous definition
+  362 | #define __HAL_DBGMCU_UNFREEZE_TIM8()         CLEAR_BIT(DBGMCU->APB2FZ, DBGMCU_APB2FZ_DBG_TIM8_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/main.c:25:
+../Core/Inc/stm32f4xx_hal.h:118: warning: "__HAL_SYSCFG_REMAPMEMORY_FLASH" redefined
+  118 | #define __HAL_SYSCFG_REMAPMEMORY_FLASH()             (SYSCFG->MEMRMP &= ~(SYSCFG_MEMRMP_MEM_MODE))
+      | 
+In file included from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:390: note: this is the location of the previous definition
+  390 | #define __HAL_SYSCFG_REMAPMEMORY_FLASH()       CLEAR_BIT(SYSCFG->MEMRMP, SYSCFG_MEMRMP_MEM_MODE)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/main.c:25:
+../Core/Inc/stm32f4xx_hal.h:122: warning: "__HAL_SYSCFG_REMAPMEMORY_SYSTEMFLASH" redefined
+  122 | #define __HAL_SYSCFG_REMAPMEMORY_SYSTEMFLASH()       do {SYSCFG->MEMRMP &= ~(SYSCFG_MEMRMP_MEM_MODE);\
+      | 
+In file included from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:394: note: this is the location of the previous definition
+  394 | #define __HAL_SYSCFG_REMAPMEMORY_SYSTEMFLASH() MODIFY_REG(SYSCFG->MEMRMP, SYSCFG_MEMRMP_MEM_MODE, SYSCFG_MEMRMP_MEM_MODE_0)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/main.c:25:
+../Core/Inc/stm32f4xx_hal.h:128: warning: "__HAL_SYSCFG_REMAPMEMORY_SRAM" redefined
+  128 | #define __HAL_SYSCFG_REMAPMEMORY_SRAM()       do {SYSCFG->MEMRMP &= ~(SYSCFG_MEMRMP_MEM_MODE);\
+      | 
+In file included from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:398: note: this is the location of the previous definition
+  398 | #define __HAL_SYSCFG_REMAPMEMORY_SRAM()        MODIFY_REG(SYSCFG->MEMRMP, SYSCFG_MEMRMP_MEM_MODE, (SYSCFG_MEMRMP_MEM_MODE_1|SYSCFG_MEMRMP_MEM_MODE_0))
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/main.c:25:
+../Core/Inc/stm32f4xx_hal.h:205:28: error: conflicting types for 'uwTickFreq'; have 'HAL_TickFreqTypeDef'
+  205 | extern HAL_TickFreqTypeDef uwTickFreq;
+      |                            ^~~~~~~~~~
+In file included from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:620:28: note: previous declaration of 'uwTickFreq' with type 'HAL_TickFreqTypeDef'
+  620 | extern HAL_TickFreqTypeDef uwTickFreq;
+      |                            ^~~~~~~~~~
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/main.c:25:
+../Core/Inc/stm32f4xx_hal.h:235:19: error: conflicting types for 'HAL_SetTickFreq'; have 'HAL_StatusTypeDef(HAL_TickFreqTypeDef)'
+  235 | HAL_StatusTypeDef HAL_SetTickFreq(HAL_TickFreqTypeDef Freq);
+      |                   ^~~~~~~~~~~~~~~
+In file included from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:655:20: note: previous declaration of 'HAL_SetTickFreq' with type 'HAL_StatusTypeDef(HAL_TickFreqTypeDef)'
+  655 | HAL_StatusTypeDef  HAL_SetTickFreq(HAL_TickFreqTypeDef Freq);
+      |                    ^~~~~~~~~~~~~~~
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/main.c:25:
+../Core/Inc/stm32f4xx_hal.h:236:21: error: conflicting types for 'HAL_GetTickFreq'; have 'HAL_TickFreqTypeDef(void)'
+  236 | HAL_TickFreqTypeDef HAL_GetTickFreq(void);
+      |                     ^~~~~~~~~~~~~~~
+In file included from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:656:21: note: previous declaration of 'HAL_GetTickFreq' with type 'HAL_TickFreqTypeDef(void)'
+  656 | HAL_TickFreqTypeDef HAL_GetTickFreq(void);
+      |                     ^~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:141:5: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
+  141 |     itoa(x, snum, 10);
+      |     ^~~~
+../Core/Src/main.c:131:7: warning: unused variable 'x' [-Wunused-variable]
+  131 |   int x;
+      |       ^
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Core/Inc/stm32f4xx_hal.h:50:3: error: redeclaration of enumerator 'HAL_TICK_FREQ_10HZ'
+   50 |   HAL_TICK_FREQ_10HZ         = 100U,
+      |   ^~~~~~~~~~~~~~~~~~
+In file included from ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:288,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h:29,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32l4xx_hal_conf.h:258,
+                 from ../Core/Inc/liquidcrystal_i2c.h:4,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:49:3: note: previous definition of 'HAL_TICK_FREQ_10HZ' with type 'enum <anonymous>'
+   49 |   HAL_TICK_FREQ_10HZ         = 100U,
+      |   ^~~~~~~~~~~~~~~~~~
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Core/Inc/stm32f4xx_hal.h:51:3: error: redeclaration of enumerator 'HAL_TICK_FREQ_100HZ'
+   51 |   HAL_TICK_FREQ_100HZ        = 10U,
+      |   ^~~~~~~~~~~~~~~~~~~
+In file included from ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:288,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h:29,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32l4xx_hal_conf.h:258,
+                 from ../Core/Inc/liquidcrystal_i2c.h:4,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:50:3: note: previous definition of 'HAL_TICK_FREQ_100HZ' with type 'enum <anonymous>'
+   50 |   HAL_TICK_FREQ_100HZ        = 10U,
+      |   ^~~~~~~~~~~~~~~~~~~
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Core/Inc/stm32f4xx_hal.h:52:3: error: redeclaration of enumerator 'HAL_TICK_FREQ_1KHZ'
+   52 |   HAL_TICK_FREQ_1KHZ         = 1U,
+      |   ^~~~~~~~~~~~~~~~~~
+In file included from ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:288,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h:29,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32l4xx_hal_conf.h:258,
+                 from ../Core/Inc/liquidcrystal_i2c.h:4,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:51:3: note: previous definition of 'HAL_TICK_FREQ_1KHZ' with type 'enum <anonymous>'
+   51 |   HAL_TICK_FREQ_1KHZ         = 1U,
+      |   ^~~~~~~~~~~~~~~~~~
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Core/Inc/stm32f4xx_hal.h:53:3: error: redeclaration of enumerator 'HAL_TICK_FREQ_DEFAULT'
+   53 |   HAL_TICK_FREQ_DEFAULT      = HAL_TICK_FREQ_1KHZ
+      |   ^~~~~~~~~~~~~~~~~~~~~
+In file included from ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:288,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h:29,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32l4xx_hal_conf.h:258,
+                 from ../Core/Inc/liquidcrystal_i2c.h:4,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:52:3: note: previous definition of 'HAL_TICK_FREQ_DEFAULT' with type 'enum <anonymous>'
+   52 |   HAL_TICK_FREQ_DEFAULT      = HAL_TICK_FREQ_1KHZ
+      |   ^~~~~~~~~~~~~~~~~~~~~
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Core/Inc/stm32f4xx_hal.h:54:3: error: conflicting types for 'HAL_TickFreqTypeDef'; have 'enum <anonymous>'
+   54 | } HAL_TickFreqTypeDef;
+      |   ^~~~~~~~~~~~~~~~~~~
+In file included from ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:288,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h:29,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32l4xx_hal_conf.h:258,
+                 from ../Core/Inc/liquidcrystal_i2c.h:4,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:53:3: note: previous declaration of 'HAL_TickFreqTypeDef' with type 'HAL_TickFreqTypeDef'
+   53 | } HAL_TickFreqTypeDef;
+      |   ^~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Core/Inc/stm32f4xx_hal.h:70: warning: "__HAL_DBGMCU_FREEZE_TIM2" redefined
+   70 | #define __HAL_DBGMCU_FREEZE_TIM2()           (DBGMCU->APB1FZ |= (DBGMCU_APB1_FZ_DBG_TIM2_STOP))
+      | 
+In file included from ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:288,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h:29,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32l4xx_hal_conf.h:258,
+                 from ../Core/Inc/liquidcrystal_i2c.h:4,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:271: note: this is the location of the previous definition
+  271 | #define __HAL_DBGMCU_FREEZE_TIM2()           SET_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_TIM2_STOP)
+      | 
+make: *** Waiting for unfinished jobs....
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Core/Inc/stm32f4xx_hal.h:71: warning: "__HAL_DBGMCU_FREEZE_TIM3" redefined
+   71 | #define __HAL_DBGMCU_FREEZE_TIM3()           (DBGMCU->APB1FZ |= (DBGMCU_APB1_FZ_DBG_TIM3_STOP))
+      | 
+In file included from ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:288,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h:29,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32l4xx_hal_conf.h:258,
+                 from ../Core/Inc/liquidcrystal_i2c.h:4,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:276: note: this is the location of the previous definition
+  276 | #define __HAL_DBGMCU_FREEZE_TIM3()           SET_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_TIM3_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Core/Inc/stm32f4xx_hal.h:72: warning: "__HAL_DBGMCU_FREEZE_TIM4" redefined
+   72 | #define __HAL_DBGMCU_FREEZE_TIM4()           (DBGMCU->APB1FZ |= (DBGMCU_APB1_FZ_DBG_TIM4_STOP))
+      | 
+In file included from ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:288,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h:29,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32l4xx_hal_conf.h:258,
+                 from ../Core/Inc/liquidcrystal_i2c.h:4,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:281: note: this is the location of the previous definition
+  281 | #define __HAL_DBGMCU_FREEZE_TIM4()           SET_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_TIM4_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Core/Inc/stm32f4xx_hal.h:73: warning: "__HAL_DBGMCU_FREEZE_TIM5" redefined
+   73 | #define __HAL_DBGMCU_FREEZE_TIM5()           (DBGMCU->APB1FZ |= (DBGMCU_APB1_FZ_DBG_TIM5_STOP))
+      | 
+In file included from ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:288,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h:29,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32l4xx_hal_conf.h:258,
+                 from ../Core/Inc/liquidcrystal_i2c.h:4,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:286: note: this is the location of the previous definition
+  286 | #define __HAL_DBGMCU_FREEZE_TIM5()           SET_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_TIM5_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Core/Inc/stm32f4xx_hal.h:74: warning: "__HAL_DBGMCU_FREEZE_TIM6" redefined
+   74 | #define __HAL_DBGMCU_FREEZE_TIM6()           (DBGMCU->APB1FZ |= (DBGMCU_APB1_FZ_DBG_TIM6_STOP))
+      | 
+In file included from ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:288,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h:29,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32l4xx_hal_conf.h:258,
+                 from ../Core/Inc/liquidcrystal_i2c.h:4,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:291: note: this is the location of the previous definition
+  291 | #define __HAL_DBGMCU_FREEZE_TIM6()           SET_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_TIM6_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Core/Inc/stm32f4xx_hal.h:75: warning: "__HAL_DBGMCU_FREEZE_TIM7" redefined
+   75 | #define __HAL_DBGMCU_FREEZE_TIM7()           (DBGMCU->APB1FZ |= (DBGMCU_APB1_FZ_DBG_TIM7_STOP))
+      | 
+In file included from ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:288,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h:29,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32l4xx_hal_conf.h:258,
+                 from ../Core/Inc/liquidcrystal_i2c.h:4,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:296: note: this is the location of the previous definition
+  296 | #define __HAL_DBGMCU_FREEZE_TIM7()           SET_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_TIM7_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Core/Inc/stm32f4xx_hal.h:79: warning: "__HAL_DBGMCU_FREEZE_RTC" redefined
+   79 | #define __HAL_DBGMCU_FREEZE_RTC()            (DBGMCU->APB1FZ |= (DBGMCU_APB1_FZ_DBG_RTC_STOP))
+      | 
+In file included from ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:288,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h:29,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32l4xx_hal_conf.h:258,
+                 from ../Core/Inc/liquidcrystal_i2c.h:4,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:301: note: this is the location of the previous definition
+  301 | #define __HAL_DBGMCU_FREEZE_RTC()            SET_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_RTC_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Core/Inc/stm32f4xx_hal.h:80: warning: "__HAL_DBGMCU_FREEZE_WWDG" redefined
+   80 | #define __HAL_DBGMCU_FREEZE_WWDG()           (DBGMCU->APB1FZ |= (DBGMCU_APB1_FZ_DBG_WWDG_STOP))
+      | 
+In file included from ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:288,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h:29,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32l4xx_hal_conf.h:258,
+                 from ../Core/Inc/liquidcrystal_i2c.h:4,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:306: note: this is the location of the previous definition
+  306 | #define __HAL_DBGMCU_FREEZE_WWDG()           SET_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_WWDG_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Core/Inc/stm32f4xx_hal.h:81: warning: "__HAL_DBGMCU_FREEZE_IWDG" redefined
+   81 | #define __HAL_DBGMCU_FREEZE_IWDG()           (DBGMCU->APB1FZ |= (DBGMCU_APB1_FZ_DBG_IWDG_STOP))
+      | 
+In file included from ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:288,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h:29,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32l4xx_hal_conf.h:258,
+                 from ../Core/Inc/liquidcrystal_i2c.h:4,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:311: note: this is the location of the previous definition
+  311 | #define __HAL_DBGMCU_FREEZE_IWDG()           SET_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_IWDG_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Core/Inc/stm32f4xx_hal.h:82: warning: "__HAL_DBGMCU_FREEZE_I2C1_TIMEOUT" redefined
+   82 | #define __HAL_DBGMCU_FREEZE_I2C1_TIMEOUT()   (DBGMCU->APB1FZ |= (DBGMCU_APB1_FZ_DBG_I2C1_SMBUS_TIMEOUT))
+      | 
+In file included from ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:288,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h:29,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32l4xx_hal_conf.h:258,
+                 from ../Core/Inc/liquidcrystal_i2c.h:4,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:316: note: this is the location of the previous definition
+  316 | #define __HAL_DBGMCU_FREEZE_I2C1_TIMEOUT()   SET_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_I2C1_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Core/Inc/stm32f4xx_hal.h:83: warning: "__HAL_DBGMCU_FREEZE_I2C2_TIMEOUT" redefined
+   83 | #define __HAL_DBGMCU_FREEZE_I2C2_TIMEOUT()   (DBGMCU->APB1FZ |= (DBGMCU_APB1_FZ_DBG_I2C2_SMBUS_TIMEOUT))
+      | 
+In file included from ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:288,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h:29,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32l4xx_hal_conf.h:258,
+                 from ../Core/Inc/liquidcrystal_i2c.h:4,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:321: note: this is the location of the previous definition
+  321 | #define __HAL_DBGMCU_FREEZE_I2C2_TIMEOUT()   SET_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_I2C2_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Core/Inc/stm32f4xx_hal.h:84: warning: "__HAL_DBGMCU_FREEZE_I2C3_TIMEOUT" redefined
+   84 | #define __HAL_DBGMCU_FREEZE_I2C3_TIMEOUT()   (DBGMCU->APB1FZ |= (DBGMCU_APB1_FZ_DBG_I2C3_SMBUS_TIMEOUT))
+      | 
+In file included from ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:288,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h:29,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32l4xx_hal_conf.h:258,
+                 from ../Core/Inc/liquidcrystal_i2c.h:4,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:326: note: this is the location of the previous definition
+  326 | #define __HAL_DBGMCU_FREEZE_I2C3_TIMEOUT()   SET_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_I2C3_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Core/Inc/stm32f4xx_hal.h:85: warning: "__HAL_DBGMCU_FREEZE_CAN1" redefined
+   85 | #define __HAL_DBGMCU_FREEZE_CAN1()           (DBGMCU->APB1FZ |= (DBGMCU_APB1_FZ_DBG_CAN1_STOP))
+      | 
+In file included from ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:288,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h:29,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32l4xx_hal_conf.h:258,
+                 from ../Core/Inc/liquidcrystal_i2c.h:4,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:336: note: this is the location of the previous definition
+  336 | #define __HAL_DBGMCU_FREEZE_CAN1()           SET_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_CAN_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Core/Inc/stm32f4xx_hal.h:87: warning: "__HAL_DBGMCU_FREEZE_TIM1" redefined
+   87 | #define __HAL_DBGMCU_FREEZE_TIM1()           (DBGMCU->APB2FZ |= (DBGMCU_APB2_FZ_DBG_TIM1_STOP))
+      | 
+In file included from ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:288,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h:29,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32l4xx_hal_conf.h:258,
+                 from ../Core/Inc/liquidcrystal_i2c.h:4,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:356: note: this is the location of the previous definition
+  356 | #define __HAL_DBGMCU_FREEZE_TIM1()           SET_BIT(DBGMCU->APB2FZ, DBGMCU_APB2FZ_DBG_TIM1_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Core/Inc/stm32f4xx_hal.h:88: warning: "__HAL_DBGMCU_FREEZE_TIM8" redefined
+   88 | #define __HAL_DBGMCU_FREEZE_TIM8()           (DBGMCU->APB2FZ |= (DBGMCU_APB2_FZ_DBG_TIM8_STOP))
+      | 
+In file included from ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:288,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h:29,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32l4xx_hal_conf.h:258,
+                 from ../Core/Inc/liquidcrystal_i2c.h:4,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:361: note: this is the location of the previous definition
+  361 | #define __HAL_DBGMCU_FREEZE_TIM8()           SET_BIT(DBGMCU->APB2FZ, DBGMCU_APB2FZ_DBG_TIM8_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Core/Inc/stm32f4xx_hal.h:93: warning: "__HAL_DBGMCU_UNFREEZE_TIM2" redefined
+   93 | #define __HAL_DBGMCU_UNFREEZE_TIM2()           (DBGMCU->APB1FZ &= ~(DBGMCU_APB1_FZ_DBG_TIM2_STOP))
+      | 
+In file included from ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:288,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h:29,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32l4xx_hal_conf.h:258,
+                 from ../Core/Inc/liquidcrystal_i2c.h:4,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:272: note: this is the location of the previous definition
+  272 | #define __HAL_DBGMCU_UNFREEZE_TIM2()         CLEAR_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_TIM2_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Core/Inc/stm32f4xx_hal.h:94: warning: "__HAL_DBGMCU_UNFREEZE_TIM3" redefined
+   94 | #define __HAL_DBGMCU_UNFREEZE_TIM3()           (DBGMCU->APB1FZ &= ~(DBGMCU_APB1_FZ_DBG_TIM3_STOP))
+      | 
+In file included from ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:288,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h:29,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32l4xx_hal_conf.h:258,
+                 from ../Core/Inc/liquidcrystal_i2c.h:4,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:277: note: this is the location of the previous definition
+  277 | #define __HAL_DBGMCU_UNFREEZE_TIM3()         CLEAR_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_TIM3_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Core/Inc/stm32f4xx_hal.h:95: warning: "__HAL_DBGMCU_UNFREEZE_TIM4" redefined
+   95 | #define __HAL_DBGMCU_UNFREEZE_TIM4()           (DBGMCU->APB1FZ &= ~(DBGMCU_APB1_FZ_DBG_TIM4_STOP))
+      | 
+In file included from ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:288,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h:29,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32l4xx_hal_conf.h:258,
+                 from ../Core/Inc/liquidcrystal_i2c.h:4,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:282: note: this is the location of the previous definition
+  282 | #define __HAL_DBGMCU_UNFREEZE_TIM4()         CLEAR_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_TIM4_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Core/Inc/stm32f4xx_hal.h:96: warning: "__HAL_DBGMCU_UNFREEZE_TIM5" redefined
+   96 | #define __HAL_DBGMCU_UNFREEZE_TIM5()           (DBGMCU->APB1FZ &= ~(DBGMCU_APB1_FZ_DBG_TIM5_STOP))
+      | 
+In file included from ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:288,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h:29,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32l4xx_hal_conf.h:258,
+                 from ../Core/Inc/liquidcrystal_i2c.h:4,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:287: note: this is the location of the previous definition
+  287 | #define __HAL_DBGMCU_UNFREEZE_TIM5()         CLEAR_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_TIM5_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Core/Inc/stm32f4xx_hal.h:97: warning: "__HAL_DBGMCU_UNFREEZE_TIM6" redefined
+   97 | #define __HAL_DBGMCU_UNFREEZE_TIM6()           (DBGMCU->APB1FZ &= ~(DBGMCU_APB1_FZ_DBG_TIM6_STOP))
+      | 
+In file included from ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:288,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h:29,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32l4xx_hal_conf.h:258,
+                 from ../Core/Inc/liquidcrystal_i2c.h:4,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:292: note: this is the location of the previous definition
+  292 | #define __HAL_DBGMCU_UNFREEZE_TIM6()         CLEAR_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_TIM6_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Core/Inc/stm32f4xx_hal.h:98: warning: "__HAL_DBGMCU_UNFREEZE_TIM7" redefined
+   98 | #define __HAL_DBGMCU_UNFREEZE_TIM7()           (DBGMCU->APB1FZ &= ~(DBGMCU_APB1_FZ_DBG_TIM7_STOP))
+      | 
+In file included from ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:288,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h:29,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32l4xx_hal_conf.h:258,
+                 from ../Core/Inc/liquidcrystal_i2c.h:4,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:297: note: this is the location of the previous definition
+  297 | #define __HAL_DBGMCU_UNFREEZE_TIM7()         CLEAR_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_TIM7_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Core/Inc/stm32f4xx_hal.h:102: warning: "__HAL_DBGMCU_UNFREEZE_RTC" redefined
+  102 | #define __HAL_DBGMCU_UNFREEZE_RTC()            (DBGMCU->APB1FZ &= ~(DBGMCU_APB1_FZ_DBG_RTC_STOP))
+      | 
+In file included from ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:288,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h:29,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32l4xx_hal_conf.h:258,
+                 from ../Core/Inc/liquidcrystal_i2c.h:4,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:302: note: this is the location of the previous definition
+  302 | #define __HAL_DBGMCU_UNFREEZE_RTC()          CLEAR_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_RTC_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Core/Inc/stm32f4xx_hal.h:103: warning: "__HAL_DBGMCU_UNFREEZE_WWDG" redefined
+  103 | #define __HAL_DBGMCU_UNFREEZE_WWDG()           (DBGMCU->APB1FZ &= ~(DBGMCU_APB1_FZ_DBG_WWDG_STOP))
+      | 
+In file included from ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:288,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h:29,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32l4xx_hal_conf.h:258,
+                 from ../Core/Inc/liquidcrystal_i2c.h:4,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:307: note: this is the location of the previous definition
+  307 | #define __HAL_DBGMCU_UNFREEZE_WWDG()         CLEAR_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_WWDG_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Core/Inc/stm32f4xx_hal.h:104: warning: "__HAL_DBGMCU_UNFREEZE_IWDG" redefined
+  104 | #define __HAL_DBGMCU_UNFREEZE_IWDG()           (DBGMCU->APB1FZ &= ~(DBGMCU_APB1_FZ_DBG_IWDG_STOP))
+      | 
+In file included from ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:288,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h:29,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32l4xx_hal_conf.h:258,
+                 from ../Core/Inc/liquidcrystal_i2c.h:4,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:312: note: this is the location of the previous definition
+  312 | #define __HAL_DBGMCU_UNFREEZE_IWDG()         CLEAR_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_IWDG_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Core/Inc/stm32f4xx_hal.h:105: warning: "__HAL_DBGMCU_UNFREEZE_I2C1_TIMEOUT" redefined
+  105 | #define __HAL_DBGMCU_UNFREEZE_I2C1_TIMEOUT()   (DBGMCU->APB1FZ &= ~(DBGMCU_APB1_FZ_DBG_I2C1_SMBUS_TIMEOUT))
+      | 
+In file included from ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:288,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h:29,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32l4xx_hal_conf.h:258,
+                 from ../Core/Inc/liquidcrystal_i2c.h:4,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:317: note: this is the location of the previous definition
+  317 | #define __HAL_DBGMCU_UNFREEZE_I2C1_TIMEOUT() CLEAR_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_I2C1_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Core/Inc/stm32f4xx_hal.h:106: warning: "__HAL_DBGMCU_UNFREEZE_I2C2_TIMEOUT" redefined
+  106 | #define __HAL_DBGMCU_UNFREEZE_I2C2_TIMEOUT()   (DBGMCU->APB1FZ &= ~(DBGMCU_APB1_FZ_DBG_I2C2_SMBUS_TIMEOUT))
+      | 
+In file included from ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:288,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h:29,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32l4xx_hal_conf.h:258,
+                 from ../Core/Inc/liquidcrystal_i2c.h:4,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:322: note: this is the location of the previous definition
+  322 | #define __HAL_DBGMCU_UNFREEZE_I2C2_TIMEOUT() CLEAR_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_I2C2_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Core/Inc/stm32f4xx_hal.h:107: warning: "__HAL_DBGMCU_UNFREEZE_I2C3_TIMEOUT" redefined
+  107 | #define __HAL_DBGMCU_UNFREEZE_I2C3_TIMEOUT()   (DBGMCU->APB1FZ &= ~(DBGMCU_APB1_FZ_DBG_I2C3_SMBUS_TIMEOUT))
+      | 
+In file included from ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:288,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h:29,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32l4xx_hal_conf.h:258,
+                 from ../Core/Inc/liquidcrystal_i2c.h:4,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:327: note: this is the location of the previous definition
+  327 | #define __HAL_DBGMCU_UNFREEZE_I2C3_TIMEOUT() CLEAR_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_I2C3_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Core/Inc/stm32f4xx_hal.h:108: warning: "__HAL_DBGMCU_UNFREEZE_CAN1" redefined
+  108 | #define __HAL_DBGMCU_UNFREEZE_CAN1()           (DBGMCU->APB1FZ &= ~(DBGMCU_APB1_FZ_DBG_CAN1_STOP))
+      | 
+In file included from ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:288,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h:29,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32l4xx_hal_conf.h:258,
+                 from ../Core/Inc/liquidcrystal_i2c.h:4,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:337: note: this is the location of the previous definition
+  337 | #define __HAL_DBGMCU_UNFREEZE_CAN1()         CLEAR_BIT(DBGMCU->APB1FZR1, DBGMCU_APB1FZR1_DBG_CAN_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Core/Inc/stm32f4xx_hal.h:110: warning: "__HAL_DBGMCU_UNFREEZE_TIM1" redefined
+  110 | #define __HAL_DBGMCU_UNFREEZE_TIM1()           (DBGMCU->APB2FZ &= ~(DBGMCU_APB2_FZ_DBG_TIM1_STOP))
+      | 
+In file included from ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:288,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h:29,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32l4xx_hal_conf.h:258,
+                 from ../Core/Inc/liquidcrystal_i2c.h:4,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:357: note: this is the location of the previous definition
+  357 | #define __HAL_DBGMCU_UNFREEZE_TIM1()         CLEAR_BIT(DBGMCU->APB2FZ, DBGMCU_APB2FZ_DBG_TIM1_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Core/Inc/stm32f4xx_hal.h:111: warning: "__HAL_DBGMCU_UNFREEZE_TIM8" redefined
+  111 | #define __HAL_DBGMCU_UNFREEZE_TIM8()           (DBGMCU->APB2FZ &= ~(DBGMCU_APB2_FZ_DBG_TIM8_STOP))
+      | 
+In file included from ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:288,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h:29,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32l4xx_hal_conf.h:258,
+                 from ../Core/Inc/liquidcrystal_i2c.h:4,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:362: note: this is the location of the previous definition
+  362 | #define __HAL_DBGMCU_UNFREEZE_TIM8()         CLEAR_BIT(DBGMCU->APB2FZ, DBGMCU_APB2FZ_DBG_TIM8_STOP)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Core/Inc/stm32f4xx_hal.h:118: warning: "__HAL_SYSCFG_REMAPMEMORY_FLASH" redefined
+  118 | #define __HAL_SYSCFG_REMAPMEMORY_FLASH()             (SYSCFG->MEMRMP &= ~(SYSCFG_MEMRMP_MEM_MODE))
+      | 
+In file included from ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:288,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h:29,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32l4xx_hal_conf.h:258,
+                 from ../Core/Inc/liquidcrystal_i2c.h:4,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:390: note: this is the location of the previous definition
+  390 | #define __HAL_SYSCFG_REMAPMEMORY_FLASH()       CLEAR_BIT(SYSCFG->MEMRMP, SYSCFG_MEMRMP_MEM_MODE)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Core/Inc/stm32f4xx_hal.h:122: warning: "__HAL_SYSCFG_REMAPMEMORY_SYSTEMFLASH" redefined
+  122 | #define __HAL_SYSCFG_REMAPMEMORY_SYSTEMFLASH()       do {SYSCFG->MEMRMP &= ~(SYSCFG_MEMRMP_MEM_MODE);\
+      | 
+In file included from ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:288,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h:29,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32l4xx_hal_conf.h:258,
+                 from ../Core/Inc/liquidcrystal_i2c.h:4,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:394: note: this is the location of the previous definition
+  394 | #define __HAL_SYSCFG_REMAPMEMORY_SYSTEMFLASH() MODIFY_REG(SYSCFG->MEMRMP, SYSCFG_MEMRMP_MEM_MODE, SYSCFG_MEMRMP_MEM_MODE_0)
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Core/Inc/stm32f4xx_hal.h:128: warning: "__HAL_SYSCFG_REMAPMEMORY_SRAM" redefined
+  128 | #define __HAL_SYSCFG_REMAPMEMORY_SRAM()       do {SYSCFG->MEMRMP &= ~(SYSCFG_MEMRMP_MEM_MODE);\
+      | 
+In file included from ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:288,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h:29,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32l4xx_hal_conf.h:258,
+                 from ../Core/Inc/liquidcrystal_i2c.h:4,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:398: note: this is the location of the previous definition
+  398 | #define __HAL_SYSCFG_REMAPMEMORY_SRAM()        MODIFY_REG(SYSCFG->MEMRMP, SYSCFG_MEMRMP_MEM_MODE, (SYSCFG_MEMRMP_MEM_MODE_1|SYSCFG_MEMRMP_MEM_MODE_0))
+      | 
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Core/Inc/stm32f4xx_hal.h:205:28: error: conflicting types for 'uwTickFreq'; have 'HAL_TickFreqTypeDef'
+  205 | extern HAL_TickFreqTypeDef uwTickFreq;
+      |                            ^~~~~~~~~~
+In file included from ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:288,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h:29,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32l4xx_hal_conf.h:258,
+                 from ../Core/Inc/liquidcrystal_i2c.h:4,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:620:28: note: previous declaration of 'uwTickFreq' with type 'HAL_TickFreqTypeDef'
+  620 | extern HAL_TickFreqTypeDef uwTickFreq;
+      |                            ^~~~~~~~~~
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Core/Inc/stm32f4xx_hal.h:218:19: error: conflicting types for 'HAL_Init'; have 'HAL_StatusTypeDef(void)'
+  218 | HAL_StatusTypeDef HAL_Init(void);
+      |                   ^~~~~~~~
+In file included from ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:288,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h:29,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32l4xx_hal_conf.h:258,
+                 from ../Core/Inc/liquidcrystal_i2c.h:4,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:636:19: note: previous declaration of 'HAL_Init' with type 'int(void)'
+  636 | HAL_StatusTypeDef HAL_Init(void);
+      |                   ^~~~~~~~
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Core/Inc/stm32f4xx_hal.h:219:19: error: conflicting types for 'HAL_DeInit'; have 'HAL_StatusTypeDef(void)'
+  219 | HAL_StatusTypeDef HAL_DeInit(void);
+      |                   ^~~~~~~~~~
+In file included from ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:288,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h:29,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32l4xx_hal_conf.h:258,
+                 from ../Core/Inc/liquidcrystal_i2c.h:4,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:637:19: note: previous declaration of 'HAL_DeInit' with type 'int(void)'
+  637 | HAL_StatusTypeDef HAL_DeInit(void);
+      |                   ^~~~~~~~~~
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Core/Inc/stm32f4xx_hal.h:222:19: error: conflicting types for 'HAL_InitTick'; have 'HAL_StatusTypeDef(uint32_t)' {aka 'HAL_StatusTypeDef(long unsigned int)'}
+  222 | HAL_StatusTypeDef HAL_InitTick (uint32_t TickPriority);
+      |                   ^~~~~~~~~~~~
+In file included from ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:288,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h:29,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32l4xx_hal_conf.h:258,
+                 from ../Core/Inc/liquidcrystal_i2c.h:4,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:640:19: note: previous declaration of 'HAL_InitTick' with type 'int(uint32_t)' {aka 'int(long unsigned int)'}
+  640 | HAL_StatusTypeDef HAL_InitTick (uint32_t TickPriority);
+      |                   ^~~~~~~~~~~~
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Core/Inc/stm32f4xx_hal.h:235:19: error: conflicting types for 'HAL_SetTickFreq'; have 'HAL_StatusTypeDef(HAL_TickFreqTypeDef)'
+  235 | HAL_StatusTypeDef HAL_SetTickFreq(HAL_TickFreqTypeDef Freq);
+      |                   ^~~~~~~~~~~~~~~
+In file included from ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:288,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h:29,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32l4xx_hal_conf.h:258,
+                 from ../Core/Inc/liquidcrystal_i2c.h:4,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:655:20: note: previous declaration of 'HAL_SetTickFreq' with type 'int(HAL_TickFreqTypeDef)'
+  655 | HAL_StatusTypeDef  HAL_SetTickFreq(HAL_TickFreqTypeDef Freq);
+      |                    ^~~~~~~~~~~~~~~
+In file included from ../Core/Inc/liquidcrystal_i2c.h:5,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Core/Inc/stm32f4xx_hal.h:236:21: error: conflicting types for 'HAL_GetTickFreq'; have 'HAL_TickFreqTypeDef(void)'
+  236 | HAL_TickFreqTypeDef HAL_GetTickFreq(void);
+      |                     ^~~~~~~~~~~~~~~
+In file included from ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:288,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h:29,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32l4xx_hal_conf.h:258,
+                 from ../Core/Inc/liquidcrystal_i2c.h:4,
+                 from ../Core/Src/liquidcrystal_i2c.c:1:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:656:21: note: previous declaration of 'HAL_GetTickFreq' with type 'HAL_TickFreqTypeDef(void)'
+  656 | HAL_TickFreqTypeDef HAL_GetTickFreq(void);
+      |                     ^~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/liquidcrystal_i2c.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+
+18:44:52 Build Failed. 27 errors, 68 warnings. (took 727ms)
+

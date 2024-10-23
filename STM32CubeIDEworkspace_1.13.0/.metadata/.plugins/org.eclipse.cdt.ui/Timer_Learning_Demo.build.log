@@ -1,0 +1,10 @@
+14:22:25 **** Incremental Build of configuration Debug for project Timer_Learning_Demo ****
+make -j12 all 
+arm-none-eabi-size  Timer_Learning_Demo.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16260	     92	   2116	  18468	   4824	Timer_Learning_Demo.elf
+Finished building: default.size.stdout
+ 
+
+14:22:25 Build Finished. 0 errors, 0 warnings. (took 468ms)
+

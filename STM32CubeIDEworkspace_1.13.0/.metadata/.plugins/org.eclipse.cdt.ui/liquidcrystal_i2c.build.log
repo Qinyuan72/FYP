@@ -1,0 +1,10 @@
+23:35:16 **** Incremental Build of configuration Debug for project liquidcrystal_i2c ****
+make -j12 all 
+arm-none-eabi-size   liquidcrystal_i2c.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12288	     20	   1708	  14016	   36c0	liquidcrystal_i2c.elf
+Finished building: default.size.stdout
+ 
+
+23:35:17 Build Finished. 0 errors, 0 warnings. (took 421ms)
+

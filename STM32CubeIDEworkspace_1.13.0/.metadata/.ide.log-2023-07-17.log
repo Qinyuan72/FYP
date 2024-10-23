@@ -1,0 +1,37 @@
+2023-07-18 17:12:18,766 [INFO] I2cTimingTraitement:330 - 0x10909CEC
+2023-07-18 17:12:39,924 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 554613256 Bytes (646971392)
+2023-07-18 17:12:42,697 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 201448544 Bytes (646971392)
+2023-07-18 17:12:45,820 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 296346720 Bytes (646971392)
+2023-07-18 17:12:46,470 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2023-07-18 17:12:46,470 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2023-07-18 17:12:46,470 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: I2C
+2023-07-18 17:12:46,471 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2023-07-18 17:12:46,471 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2023-07-18 17:12:46,471 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2023-07-18 17:12:46,474 [INFO] CodeGenerator:799 - code generatio: config db path: D:\STM32CubeIDE_1.13.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.9.0.202307051724\\db\
+2023-07-18 17:12:46,820 [INFO] CodeEngine:255 - oldGeneratedFile, D:\Develop\FYP\STM32CubeIDEworkspace_1.13.0\LED\MXTmpFiles\license.tmp_save
+2023-07-18 17:12:47,365 [INFO] CodeEngine:279 - Generated code: D:\Develop\FYP\STM32CubeIDEworkspace_1.13.0\LED\MXTmpFiles\license.tmp
+2023-07-18 17:12:47,525 [INFO] CodeEngine:255 - oldGeneratedFile, D:\Develop\FYP\STM32CubeIDEworkspace_1.13.0\LED\MXTmpFiles\gpio.tmp_save
+2023-07-18 17:12:47,682 [INFO] CodeEngine:279 - Generated code: D:\Develop\FYP\STM32CubeIDEworkspace_1.13.0\LED\MXTmpFiles\gpio.tmp
+2023-07-18 17:12:47,946 [INFO] CodeEngine:255 - oldGeneratedFile, D:\Develop\FYP\STM32CubeIDEworkspace_1.13.0\LED\Core\Src\stm32l4xx_it.c_save
+2023-07-18 17:12:48,132 [INFO] CodeEngine:279 - Generated code: D:\Develop\FYP\STM32CubeIDEworkspace_1.13.0\LED\Core\Src\stm32l4xx_it.c
+2023-07-18 17:12:48,143 [INFO] CodeEngine:255 - oldGeneratedFile, D:\Develop\FYP\STM32CubeIDEworkspace_1.13.0\LED\Core\Inc\stm32l4xx_it.h_save
+2023-07-18 17:12:48,256 [INFO] CodeEngine:279 - Generated code: D:\Develop\FYP\STM32CubeIDEworkspace_1.13.0\LED\Core\Inc\stm32l4xx_it.h
+2023-07-18 17:12:48,283 [INFO] CodeEngine:255 - oldGeneratedFile, D:\Develop\FYP\STM32CubeIDEworkspace_1.13.0\LED\Core\Src\stm32l4xx_hal_msp.c_save
+2023-07-18 17:12:48,476 [INFO] CodeEngine:279 - Generated code: D:\Develop\FYP\STM32CubeIDEworkspace_1.13.0\LED\Core\Src\stm32l4xx_hal_msp.c
+2023-07-18 17:12:48,485 [INFO] CodeEngine:255 - oldGeneratedFile, D:\Develop\FYP\STM32CubeIDEworkspace_1.13.0\LED\MXTmpFiles\system.tmp_save
+2023-07-18 17:12:48,581 [INFO] CodeEngine:279 - Generated code: D:\Develop\FYP\STM32CubeIDEworkspace_1.13.0\LED\MXTmpFiles\system.tmp
+2023-07-18 17:12:48,598 [INFO] CodeEngine:311 - oldGeneratedFile, D:\Develop\FYP\STM32CubeIDEworkspace_1.13.0\LED\Core\Inc\stm32l4xx_hal_conf.h_save
+2023-07-18 17:12:48,706 [INFO] CodeEngine:335 - Generated code: D:\Develop\FYP\STM32CubeIDEworkspace_1.13.0\LED\Core\Inc\stm32l4xx_hal_conf.h
+2023-07-18 17:12:48,762 [INFO] CodeEngine:255 - oldGeneratedFile, D:\Develop\FYP\STM32CubeIDEworkspace_1.13.0\LED\Core\Inc\main.h_save
+2023-07-18 17:12:48,877 [INFO] CodeEngine:279 - Generated code: D:\Develop\FYP\STM32CubeIDEworkspace_1.13.0\LED\Core\Inc\main.h
+2023-07-18 17:12:48,891 [INFO] CodeEngine:255 - oldGeneratedFile, D:\Develop\FYP\STM32CubeIDEworkspace_1.13.0\LED\Core\Src\main.c_save
+2023-07-18 17:12:49,093 [INFO] CodeEngine:279 - Generated code: D:\Develop\FYP\STM32CubeIDEworkspace_1.13.0\LED\Core\Src\main.c
+2023-07-18 17:12:50,399 [INFO] ProjectBuilder:3064 - Time for Copy HAL[1] : 542mS.
+2023-07-18 17:12:50,421 [INFO] ProjectBuilder:4404 - Project Generator version: 4.1.0
+2023-07-18 17:12:50,798 [INFO] ConfigFileManager:1457 - The Die is : DIE415
+2023-07-18 17:12:50,827 [INFO] ApiDbMcu:507 - Load IP Config File for FATFS
+2023-07-18 17:12:50,835 [INFO] ApiDbMcu:507 - Load IP Config File for FREERTOS
+2023-07-18 17:12:50,853 [INFO] ApiDbMcu:507 - Load IP Config File for TOUCHSENSING
+2023-07-18 17:12:50,867 [INFO] ApiDbMcu:507 - Load IP Config File for USB_DEVICE
+2023-07-18 17:12:50,875 [INFO] ApiDbMcu:507 - Load IP Config File for USB_HOST

@@ -1,0 +1,35 @@
+2023-11-10 17:00:42,697 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 469683344 Bytes (874512384)
+2023-11-10 17:00:43,607 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 498521232 Bytes (874512384)
+2023-11-10 17:00:44,045 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 568775824 Bytes (874512384)
+2023-11-10 17:00:45,000 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2023-11-10 17:00:45,000 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2023-11-10 17:00:45,000 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2023-11-10 17:00:45,000 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2023-11-10 17:00:45,001 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2023-11-10 17:00:45,004 [INFO] CodeGenerator:799 - code generatio: config db path: D:\STM32CubeIDE_1.13.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.9.2.202309101412\\db\
+2023-11-10 17:00:45,359 [INFO] CodeEngine:255 - oldGeneratedFile, D:\Develop\FYP\STM32CubeIDEworkspace_1.13.0\nucleo-l476rg-blinky\MXTmpFiles\license.tmp_save
+2023-11-10 17:00:45,986 [INFO] CodeEngine:279 - Generated code: D:\Develop\FYP\STM32CubeIDEworkspace_1.13.0\nucleo-l476rg-blinky\MXTmpFiles\license.tmp
+2023-11-10 17:00:46,196 [INFO] CodeEngine:255 - oldGeneratedFile, D:\Develop\FYP\STM32CubeIDEworkspace_1.13.0\nucleo-l476rg-blinky\MXTmpFiles\gpio.tmp_save
+2023-11-10 17:00:46,406 [INFO] CodeEngine:279 - Generated code: D:\Develop\FYP\STM32CubeIDEworkspace_1.13.0\nucleo-l476rg-blinky\MXTmpFiles\gpio.tmp
+2023-11-10 17:00:46,676 [INFO] CodeEngine:255 - oldGeneratedFile, D:\Develop\FYP\STM32CubeIDEworkspace_1.13.0\nucleo-l476rg-blinky\Core\Src\stm32l4xx_it.c_save
+2023-11-10 17:00:46,988 [INFO] CodeEngine:279 - Generated code: D:\Develop\FYP\STM32CubeIDEworkspace_1.13.0\nucleo-l476rg-blinky\Core\Src\stm32l4xx_it.c
+2023-11-10 17:00:47,001 [INFO] CodeEngine:255 - oldGeneratedFile, D:\Develop\FYP\STM32CubeIDEworkspace_1.13.0\nucleo-l476rg-blinky\Core\Inc\stm32l4xx_it.h_save
+2023-11-10 17:00:47,138 [INFO] CodeEngine:279 - Generated code: D:\Develop\FYP\STM32CubeIDEworkspace_1.13.0\nucleo-l476rg-blinky\Core\Inc\stm32l4xx_it.h
+2023-11-10 17:00:47,211 [INFO] CodeEngine:255 - oldGeneratedFile, D:\Develop\FYP\STM32CubeIDEworkspace_1.13.0\nucleo-l476rg-blinky\Core\Src\stm32l4xx_hal_msp.c_save
+2023-11-10 17:00:47,491 [INFO] CodeEngine:279 - Generated code: D:\Develop\FYP\STM32CubeIDEworkspace_1.13.0\nucleo-l476rg-blinky\Core\Src\stm32l4xx_hal_msp.c
+2023-11-10 17:00:47,546 [INFO] CodeEngine:255 - oldGeneratedFile, D:\Develop\FYP\STM32CubeIDEworkspace_1.13.0\nucleo-l476rg-blinky\MXTmpFiles\system.tmp_save
+2023-11-10 17:00:47,666 [INFO] CodeEngine:279 - Generated code: D:\Develop\FYP\STM32CubeIDEworkspace_1.13.0\nucleo-l476rg-blinky\MXTmpFiles\system.tmp
+2023-11-10 17:00:47,689 [INFO] CodeEngine:311 - oldGeneratedFile, D:\Develop\FYP\STM32CubeIDEworkspace_1.13.0\nucleo-l476rg-blinky\Core\Inc\stm32l4xx_hal_conf.h_save
+2023-11-10 17:00:47,840 [INFO] CodeEngine:335 - Generated code: D:\Develop\FYP\STM32CubeIDEworkspace_1.13.0\nucleo-l476rg-blinky\Core\Inc\stm32l4xx_hal_conf.h
+2023-11-10 17:00:47,964 [INFO] CodeEngine:255 - oldGeneratedFile, D:\Develop\FYP\STM32CubeIDEworkspace_1.13.0\nucleo-l476rg-blinky\Core\Inc\main.h_save
+2023-11-10 17:00:48,116 [INFO] CodeEngine:279 - Generated code: D:\Develop\FYP\STM32CubeIDEworkspace_1.13.0\nucleo-l476rg-blinky\Core\Inc\main.h
+2023-11-10 17:00:48,174 [INFO] CodeEngine:255 - oldGeneratedFile, D:\Develop\FYP\STM32CubeIDEworkspace_1.13.0\nucleo-l476rg-blinky\Core\Src\main.c_save
+2023-11-10 17:00:48,408 [INFO] CodeEngine:279 - Generated code: D:\Develop\FYP\STM32CubeIDEworkspace_1.13.0\nucleo-l476rg-blinky\Core\Src\main.c
+2023-11-10 17:00:49,542 [INFO] ProjectBuilder:3064 - Time for Copy HAL[1] : 505mS.
+2023-11-10 17:00:49,558 [INFO] ProjectBuilder:4404 - Project Generator version: 4.1.0
+2023-11-10 17:00:49,921 [INFO] ConfigFileManager:1457 - The Die is : DIE415
+2023-11-10 17:00:49,938 [INFO] ApiDbMcu:507 - Load IP Config File for FATFS
+2023-11-10 17:00:49,946 [INFO] ApiDbMcu:507 - Load IP Config File for FREERTOS
+2023-11-10 17:00:49,969 [INFO] ApiDbMcu:507 - Load IP Config File for TOUCHSENSING
+2023-11-10 17:00:49,978 [INFO] ApiDbMcu:507 - Load IP Config File for USB_DEVICE
+2023-11-10 17:00:49,984 [INFO] ApiDbMcu:507 - Load IP Config File for USB_HOST
