@@ -1,0 +1,9 @@
+../Core/Src/main.c:58:6:SPI_ClockTest	2
+../Core/Src/main.c:75:6:SPI_TransmitReceive	2
+../Core/Src/main.c:104:6:UART_ReceiveCommand	2
+../Core/Src/main.c:115:5:main	1
+../Core/Src/main.c:168:6:SystemClock_Config	4
+../Core/Src/main.c:218:13:MX_SPI2_Init	2
+../Core/Src/main.c:258:13:MX_USART2_UART_Init	2
+../Core/Src/main.c:293:13:MX_GPIO_Init	1
+../Core/Src/main.c:349:6:Error_Handler	1

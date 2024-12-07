@@ -1,0 +1,141 @@
+/* USER CODE BEGIN Header */
+/**
+  ******************************************************************************
+  * @file           : main.c
+  * @brief          : Main program body
+  ******************************************************************************
+  */
+/* USER CODE END Header */
+/* Includes ------------------------------------------------------------------*/
+#include "main.h"
+
+/* Private includes ----------------------------------------------------------*/
+/* USER CODE BEGIN Includes */
+#include "stdint.h"
+/* USER CODE END Includes */
+
+/* Private define ------------------------------------------------------------*/
+/* USER CODE BEGIN PD */
+#define SER_PIN GPIO_PIN_7     // Data input connected to PA7
+#define RCLK_PIN GPIO_PIN_6    // Latch clock connected to PA6
+#define SRCLK_PIN GPIO_PIN_5   // Shift register clock connected to PA5
+#define SER_PORT GPIOA
+#define RCLK_PORT GPIOA
+#define SRCLK_PORT GPIOA
+/* USER CODE END PD */
+
+/* Private variables ---------------------------------------------------------*/
+UART_HandleTypeDef huart2;
+
+/* USER CODE BEGIN PV */
+uint8_t currentVal = 0b00000000;  // Holds the current value to be shifted out
+/* USER CODE END PV */
+
+/* Function prototypes -------------------------------------------------------*/
+void SystemClock_Config(void);
+static void MX_GPIO_Init(void);
+static void MX_USART2_UART_Init(void);
+void HC595write(uint8_t data);
+void latch(void);
+
+/* USER CODE BEGIN 0 */
+
+/**
+ * @brief Send data to the 74HC595 shift register
+ */
+void shiftOut(uint8_t data) {
+    for (int i = 7; i >= 0; i--) {
+        // Set data line based on the current bit
+        if (data & (1 << i)) {
+            HAL_GPIO_WritePin(SER_PORT, SER_PIN, GPIO_PIN_SET);
+        } else {
+            HAL_GPIO_WritePin(SER_PORT, SER_PIN, GPIO_PIN_RESET);
+        }
+
+        // Pulse the shift clock
+        HAL_GPIO_WritePin(SRCLK_PORT, SRCLK_PIN, GPIO_PIN_SET);
+        // Add a small delay for stability if needed (tens of nanoseconds)
+        __NOP();  // Assembly no-operation instruction for minimal delay
+        HAL_GPIO_WritePin(SRCLK_PORT, SRCLK_PIN, GPIO_PIN_RESET);
+    }
+}
+
+void latch() {
+    // Pulse the latch clock to store shifted data to output
+    HAL_GPIO_WritePin(RCLK_PORT, RCLK_PIN, GPIO_PIN_SET);
+    __NOP();  // Minimal delay for stable latch pulse
+    HAL_GPIO_WritePin(RCLK_PORT, RCLK_PIN, GPIO_PIN_RESET);
+}
+
+/* USER CODE END 0 */
+
+int main(void)
+{
+    HAL_Init();
+    SystemClock_Config();
+    MX_GPIO_Init();
+    MX_USART2_UART_Init();
+
+    /* USER CODE BEGIN 2 */
+    while (1)
+    {
+        HC595write(0xAA);  // Send test pattern 10101010
+        latch();           // Latch data to output
+        HAL_Delay(500);    // Wait to observe
+
+        HC595write(0x55);  // Send test pattern 01010101
+        latch();           // Latch data to output
+        HAL_Delay(500);    // Wait to observe
+    }
+    /* USER CODE END 2 */
+}
+
+/**
+ * @brief System Clock Configuration
+ * @retval None
+ */
+void SystemClock_Config(void)
+{
+    // Clock configuration code here (unchanged from previous)
+}
+
+/**
+ * @brief USART2 Initialization Function
+ * @param None
+ * @retval None
+ */
+static void MX_USART2_UART_Init(void)
+{
+    // UART initialization code here (unchanged from previous)
+}
+
+/**
+ * @brief GPIO Initialization Function
+ * @param None
+ * @retval None
+ */
+static void MX_GPIO_Init(void)
+{
+    GPIO_InitTypeDef GPIO_InitStruct = {0};
+
+    /* GPIO Ports Clock Enable */
+    __HAL_RCC_GPIOA_CLK_ENABLE();
+
+    /* Configure GPIO pin Output Level */
+    HAL_GPIO_WritePin(GPIOA, SER_PIN | RCLK_PIN | SRCLK_PIN, GPIO_PIN_RESET);
+
+    /* Configure GPIO pins for SER, RCLK, and SRCLK */
+    GPIO_InitStruct.Pin = SER_PIN | RCLK_PIN | SRCLK_PIN;
+    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+}
+
+/**
+ * @brief Error Handler
+ */
+void Error_Handler(void)
+{
+    // Error handler code here (unchanged from previous)
+}

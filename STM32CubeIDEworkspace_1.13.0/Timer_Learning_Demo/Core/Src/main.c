@@ -18,6 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "stm32f4xx_hal.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -59,7 +60,32 @@ static void MX_TIM16_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+#define SER_Pin GPIO_PIN_7
+#define SRCLK_Pin GPIO_PIN_5
+#define RCLK_Pin GPIO_PIN_6
+#define SER_Port GPIOA
+#define SRCLK_Port GPIOA
+#define RCLK_Port GPIOA
 
+// Function to send one byte to the 74HC595
+void shiftOut(uint8_t data) {
+    for (int i = 7; i >= 0; i--) {
+        // Write data bit by bit
+        HAL_GPIO_WritePin(SER_Port, SER_Pin, (data & (1 << i)) ? GPIO_PIN_SET : GPIO_PIN_RESET);
+
+        // Toggle SRCLK to shift the bit
+        HAL_GPIO_WritePin(SRCLK_Port, SRCLK_Pin, GPIO_PIN_SET);
+        HAL_Delay(1);  // small delay for stability
+        HAL_GPIO_WritePin(SRCLK_Port, SRCLK_Pin, GPIO_PIN_RESET);
+    }
+}
+
+// Function to latch output
+void latch() {
+    HAL_GPIO_WritePin(RCLK_Port, RCLK_Pin, GPIO_PIN_SET);
+    HAL_Delay(1);  // small delay for stability
+    HAL_GPIO_WritePin(RCLK_Port, RCLK_Pin, GPIO_PIN_RESET);
+}
 /* USER CODE END 0 */
 
 /**

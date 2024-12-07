@@ -6,8 +6,13 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="htim16"/>
+		<item key="selection" value="delayTime"/>
 		<list key="findhistory">
+			<item value="250"/>
+			<item value="__HAL_RCC_SPI2_CLK_ENABLE"/>
+			<item value="txData"/>
+			<item value="HAL_SPI_TransmitReceive"/>
+			<item value="MX_GPIO_Ini"/>
 			<item value="htim16"/>
 			<item value="HAL_UART_Receive_IT"/>
 			<item value="rx_data"/>
@@ -20,6 +25,7 @@
 			<item value="stm32f4xx_hal.h: No such file or directory"/>
 		</list>
 		<list key="replacehistory">
+			<item value="delayTime"/>
 			<item value=""/>
 		</list>
 	</section>

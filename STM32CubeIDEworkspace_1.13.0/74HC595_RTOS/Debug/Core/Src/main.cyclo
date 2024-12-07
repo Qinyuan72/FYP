@@ -1,0 +1,8 @@
+../Core/Src/main.c:38:5:main	1
+../Core/Src/main.c:72:6:SN74HC595_Init	1
+../Core/Src/main.c:81:6:SN74HC595_SendData	2
+../Core/Src/main.c:109:6:vTaskSN74HC595	1
+../Core/Src/main.c:130:6:SystemClock_Config	4
+../Core/Src/main.c:181:6:MX_USART2_UART_Init	2
+../Core/Src/main.c:204:6:MX_GPIO_Init	1
+../Core/Src/main.c:227:6:Error_Handler	1

@@ -1,0 +1,155 @@
+/* Includes ------------------------------------------------------------------*/
+#include "main.h"
+
+/* Private includes ----------------------------------------------------------*/
+/* USER CODE BEGIN Includes */
+
+/* USER CODE END Includes */
+
+/* Private variables ---------------------------------------------------------*/
+UART_HandleTypeDef huart1;
+
+/* Private function prototypes -----------------------------------------------*/
+void SystemClock_Config(void);
+static void MX_GPIO_Init(void);
+static void MX_USART1_UART_Init(void);
+
+/* Private user code ---------------------------------------------------------*/
+/* USER CODE BEGIN 0 */
+// Array for displaying numbers 0 to 9 on the 74HC595
+uint16_t number[10] = {
+    0b00000011, 0b10011111, 0b00100101, 0b00001101,
+    0b10011001, 0b01001001, 0b01000001, 0b00011011,
+    0b00000001, 0b00001001
+};
+/* USER CODE END 0 */
+
+int main(void)
+{
+  /* USER CODE BEGIN 1 */
+  uint8_t cnt = 0;
+  uint16_t data = 0;
+  /* USER CODE END 1 */
+
+  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+  HAL_Init();
+
+  /* Configure the system clock */
+  SystemClock_Config();
+
+  /* Initialize all configured peripherals */
+  MX_GPIO_Init();
+  MX_USART1_UART_Init();
+  /* USER CODE BEGIN 2 */
+
+  // Set OE high initially to disable outputs, and SRCLR high to enable shifting
+  HAL_GPIO_WritePin(OE_GPIO_Port, OE_Pin, GPIO_PIN_SET); // Disable outputs initially
+  HAL_GPIO_WritePin(GPIOA, SRCLR_Pin, GPIO_PIN_SET);     // Ensure shift register is not cleared
+
+  /* USER CODE END 2 */
+
+  /* Infinite loop */
+  /* USER CODE BEGIN WHILE */
+  while (1)
+  {
+    data = number[cnt];  // Get the data for the current count (0-9)
+
+    // Set OE high to disable output while updating
+    HAL_GPIO_WritePin(OE_GPIO_Port, OE_Pin, GPIO_PIN_SET);  // Disable outputs
+
+    // Clear any previous data in shift register
+    HAL_GPIO_WritePin(GPIOA, SRCLR_Pin, GPIO_PIN_SET);      // Ensure SRCLR is high (enabled)
+
+    // Send data to shift register bit-by-bit
+    for (int i = 0; i < 8; i++) {
+      // Set SER based on the current bit of the data
+      if (data & (1 << (7 - i))) {  // MSB first
+        HAL_GPIO_WritePin(GPIOA, SER_Pin, GPIO_PIN_SET);
+      } else {
+        HAL_GPIO_WritePin(GPIOA, SER_Pin, GPIO_PIN_RESET);
+      }
+
+      // Toggle SRCLK to shift data into the register
+      HAL_GPIO_WritePin(GPIOA, SRCLK_Pin, GPIO_PIN_SET);
+      HAL_GPIO_WritePin(GPIOA, SRCLK_Pin, GPIO_PIN_RESET);
+    }
+
+    // Latch data by toggling RCLK
+    HAL_GPIO_WritePin(GPIOA, RCLK_Pin, GPIO_PIN_SET);
+    HAL_GPIO_WritePin(GPIOA, RCLK_Pin, GPIO_PIN_RESET);
+
+    // Enable outputs by setting OE low
+    HAL_GPIO_WritePin(OE_GPIO_Port, OE_Pin, GPIO_PIN_RESET);  // Enable outputs
+
+    // Increment counter and wrap around after 9
+    cnt = (cnt + 1) % 10;
+    HAL_Delay(1000);  // Wait 1 second before updating again
+
+  }
+  /* USER CODE END WHILE */
+  /* USER CODE BEGIN 3 */
+}
+/* USER CODE END 3 */
+
+/* System Clock Configuration */
+void SystemClock_Config(void)
+{
+  RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+  RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+
+  /** Configure the main internal regulator output voltage */
+  if (HAL_PWREx_ControlVoltageScaling(PWR_REGULATOR_VOLTAGE_SCALE1) != HAL_OK) {
+    Error_Handler();
+  }
+
+  /** Initializes the RCC Oscillators according to the specified parameters */
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
+  RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+  RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
+  RCC_OscInitStruct.PLL.PLLM = 1;
+  RCC_OscInitStruct.PLL.PLLN = 10;
+  RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV7;
+  RCC_OscInitStruct.PLL.PLLQ = RCC_PLLQ_DIV2;
+  RCC_OscInitStruct.PLL.PLLR = RCC_PLLR_DIV2;
+  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK) {
+    Error_Handler();
+  }
+
+  /** Initializes the CPU, AHB and APB buses clocks */
+  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2;
+  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
+  RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
+  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_4) != HAL_OK) {
+    Error_Handler();
+  }
+}
+
+/* GPIO Initialization Function */
+static void MX_GPIO_Init(void)
+{
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
+
+  /* GPIO Ports Clock Enable */
+  __HAL_RCC_GPIOA_CLK_ENABLE();
+  __HAL_RCC_GPIOB_CLK_ENABLE();
+
+  /*Configure GPIO pins : SER_Pin RCLK_Pin SRCLK_Pin OE_Pin SRCLR_Pin */
+  GPIO_InitStruct.Pin = SER_Pin | RCLK_Pin | SRCLK_Pin | OE_Pin | SRCLR_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+}
+
+/* Error Handler Function */
+void Error_Handler(void)
+{
+  while (1) {
+    // Stay in loop to indicate error
+  }
+}

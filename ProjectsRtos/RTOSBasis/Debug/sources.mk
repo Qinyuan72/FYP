@@ -25,6 +25,10 @@ SUBDIRS := \
 Core/Src \
 Core/Startup \
 Drivers/STM32L4xx_HAL_Driver/Src \
+Middlewares/Third_Party/FreeRTOS/SEGGER/Config \
+Middlewares/Third_Party/FreeRTOS/SEGGER/OS \
+Middlewares/Third_Party/FreeRTOS/SEGGER/SEGGER \
+Middlewares/Third_Party/FreeRTOS/SEGGER/SEGGER/Syscalls \
 Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 \
 Middlewares/Third_Party/FreeRTOS/Source \
 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F \

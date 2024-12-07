@@ -1,10 +1,17 @@
-17:22:53 **** Incremental Build of configuration Debug for project USART ****
+10:25:38 **** Build of configuration Debug for project USART ****
 make -j12 all 
+arm-none-eabi-gcc -o "USART.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Develop\FYP\STM32CubeIDEworkspace_1.13.0\USART\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="USART.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+D:/STM32CubeIDE_1.13.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: USART.elf has a LOAD segment with RWX permissions
+Finished building target: USART.elf
+ 
 arm-none-eabi-size  USART.elf 
+arm-none-eabi-objdump -h -S USART.elf  > "USART.list"
    text	   data	    bss	    dec	    hex	filename
   16168	     20	   1740	  17928	   4608	USART.elf
 Finished building: default.size.stdout
  
+Finished building: USART.list
+ 
 
-17:22:53 Build Finished. 0 errors, 0 warnings. (took 428ms)
+10:25:39 Build Finished. 0 errors, 1 warnings. (took 874ms)
 

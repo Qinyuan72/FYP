@@ -1,0 +1,10 @@
+10:27:37 **** Incremental Build of configuration Debug for project Pin_Config_Test ****
+make -j12 all 
+arm-none-eabi-size  Pin_Config_Test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  13412	     12	   1708	  15132	   3b1c	Pin_Config_Test.elf
+Finished building: default.size.stdout
+ 
+
+10:27:38 Build Finished. 0 errors, 0 warnings. (took 426ms)
+

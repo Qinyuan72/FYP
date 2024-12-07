@@ -1,0 +1,165 @@
+/* USER CODE BEGIN Header */
+/**
+  ******************************************************************************
+  * @file           : main.c
+  * @brief          : Main program body
+  ******************************************************************************
+  */
+/* USER CODE END Header */
+/* Includes ------------------------------------------------------------------*/
+#include "main.h"
+
+/* Private includes ----------------------------------------------------------*/
+/* USER CODE BEGIN Includes */
+#include <string.h>
+#include <stdio.h>
+/* USER CODE END Includes */
+
+/* Private define ------------------------------------------------------------*/
+/* USER CODE BEGIN PD */
+#define MCP3008_CS_PORT GPIOB
+#define MCP3008_CS1_PIN GPIO_PIN_5  // CS for MCP3008 #1
+#define MCP3008_CS2_PIN GPIO_PIN_6  // CS for MCP3008 #2
+#define MCP3008_MISO_PIN GPIO_PIN_15 // SPI MISO on PB15
+#define MCP3008_MOSI_PIN GPIO_PIN_14 // SPI MOSI on PB14
+#define MCP3008_SCK_PIN GPIO_PIN_13  // SPI SCK on PB13
+/* USER CODE END PD */
+
+/* Private variables ---------------------------------------------------------*/
+SPI_HandleTypeDef hspi2;
+UART_HandleTypeDef huart2;
+
+/* USER CODE BEGIN PV */
+char uart_buffer[50];
+/* USER CODE END PV */
+
+/* Private function prototypes -----------------------------------------------*/
+void SystemClock_Config(void);
+static void MX_GPIO_Init(void);
+static void MX_USART2_UART_Init(void);
+static void MX_SPI2_Init(void);
+/* USER CODE BEGIN PFP */
+
+/* USER CODE END PFP */
+
+/* Private user code ---------------------------------------------------------*/
+/* USER CODE BEGIN 0 */
+uint16_t MCP3008_ReadChannel(uint8_t chip, uint8_t channel) {
+    uint8_t txData[3];
+    uint8_t rxData[3];
+    uint16_t result;
+
+    // Prepare the command for MCP3008
+    txData[0] = 1; // Start bit
+    txData[1] = (0x80 | (channel << 4)); // Single-ended mode + channel
+    txData[2] = 0; // Dummy byte for data
+
+    // Set the CS pin for the selected chip and wait briefly
+    if (chip == 1) {
+        HAL_GPIO_WritePin(MCP3008_CS_PORT, MCP3008_CS1_PIN, GPIO_PIN_RESET);
+        HAL_GPIO_WritePin(MCP3008_CS_PORT, MCP3008_CS2_PIN, GPIO_PIN_SET);
+    } else {
+        HAL_GPIO_WritePin(MCP3008_CS_PORT, MCP3008_CS1_PIN, GPIO_PIN_SET);
+        HAL_GPIO_WritePin(MCP3008_CS_PORT, MCP3008_CS2_PIN, GPIO_PIN_RESET);
+    }
+
+    HAL_Delay(1); // Delay to stabilize CS
+
+    // Transmit and receive data
+    HAL_SPI_TransmitReceive(&hspi2, txData, rxData, 3, HAL_MAX_DELAY);
+
+    // Deselect both chips after the transfer
+    HAL_GPIO_WritePin(MCP3008_CS_PORT, MCP3008_CS1_PIN, GPIO_PIN_SET);
+    HAL_GPIO_WritePin(MCP3008_CS_PORT, MCP3008_CS2_PIN, GPIO_PIN_SET);
+
+    // Combine the result from the received bytes
+    result = ((rxData[1] & 0x03) << 8) | rxData[2];
+    return result;
+}
+
+/* USER CODE END 0 */
+
+/**
+  * @brief  The application entry point.
+  * @retval int
+  */
+int main(void)
+{
+  HAL_Init();
+  SystemClock_Config();
+  MX_GPIO_Init();
+  MX_USART2_UART_Init();
+  MX_SPI2_Init();
+
+  while (1)
+  {
+      for (uint8_t chip = 1; chip <= 2; chip++) {
+          for (uint8_t channel = 0; channel < 8; channel++) {
+              uint16_t adcValue = MCP3008_ReadChannel(chip, channel);
+              sprintf(uart_buffer, "Chip %u, Channel %u ADC Value: %u\n\r", chip, channel, adcValue);
+              HAL_UART_Transmit(&huart2, (uint8_t*)uart_buffer, strlen(uart_buffer), HAL_MAX_DELAY);
+              HAL_Delay(200);
+          }
+      }
+      HAL_Delay(1000);
+  }
+}
+
+/**
+  * @brief SPI2 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_SPI2_Init(void)
+{
+  hspi2.Instance = SPI2;
+  hspi2.Init.Mode = SPI_MODE_MASTER;
+  hspi2.Init.Direction = SPI_DIRECTION_2LINES;
+  hspi2.Init.DataSize = SPI_DATASIZE_8BIT;
+  hspi2.Init.CLKPolarity = SPI_POLARITY_LOW;
+  hspi2.Init.CLKPhase = SPI_PHASE_1EDGE;
+  hspi2.Init.NSS = SPI_NSS_SOFT;
+  hspi2.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_16;
+  hspi2.Init.FirstBit = SPI_FIRSTBIT_MSB;
+  hspi2.Init.TIMode = SPI_TIMODE_DISABLE;
+  hspi2.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
+  hspi2.Init.CRCPolynomial = 10;
+  if (HAL_SPI_Init(&hspi2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+}
+
+/**
+  * @brief GPIO Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_GPIO_Init(void)
+{
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
+
+  __HAL_RCC_GPIOC_CLK_ENABLE();
+  __HAL_RCC_GPIOH_CLK_ENABLE();
+  __HAL_RCC_GPIOA_CLK_ENABLE();
+  __HAL_RCC_GPIOB_CLK_ENABLE();
+
+  HAL_GPIO_WritePin(GPIOB, MCP3008_CS1_PIN|MCP3008_CS2_PIN, GPIO_PIN_SET);
+
+  GPIO_InitStruct.Pin = MCP3008_CS1_PIN|MCP3008_CS2_PIN;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(MCP3008_CS_PORT, &GPIO_InitStruct);
+
+  GPIO_InitStruct.Pin = MCP3008_MISO_PIN | MCP3008_MOSI_PIN | MCP3008_SCK_PIN;
+  GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+  GPIO_InitStruct.Alternate = GPIO_AF5_SPI2;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+}
+
+/* USER CODE BEGIN 4 */
+/* Add any additional functions here */
+/* USER CODE END 4 */

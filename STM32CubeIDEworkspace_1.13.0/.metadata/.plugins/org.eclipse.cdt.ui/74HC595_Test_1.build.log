@@ -1,0 +1,10 @@
+14:35:28 **** Incremental Build of configuration Debug for project 74HC595_Test_1 ****
+make -j12 all 
+arm-none-eabi-size  74HC595_Test_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16824	    124	   2044	  18992	   4a30	74HC595_Test_1.elf
+Finished building: default.size.stdout
+ 
+
+14:35:28 Build Finished. 0 errors, 0 warnings. (took 467ms)
+
