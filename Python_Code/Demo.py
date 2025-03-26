@@ -5,7 +5,7 @@ import tkinter as tk
 from tkinter import ttk, scrolledtext
 
 class UNO_Serial:
-    def __init__(self, port='COM3', baudrate=115200):
+    def __init__(self, port='COM9', baudrate=115200):
         try:
             self.arduino = serial.Serial(port=port, baudrate=baudrate, timeout=0.1)
             time.sleep(2)
