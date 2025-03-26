@@ -6,8 +6,11 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="delayTime"/>
+		<item key="selection" value="pa"/>
 		<list key="findhistory">
+			<item value="pa"/>
+			<item value="p"/>
+			<item value="pa5"/>
 			<item value="250"/>
 			<item value="__HAL_RCC_SPI2_CLK_ENABLE"/>
 			<item value="txData"/>
@@ -20,9 +23,6 @@
 			<item value="usercide"/>
 			<item value="RxCpltCallback"/>
 			<item value="RxCp"/>
-			<item value="Rx"/>
-			<item value="user"/>
-			<item value="stm32f4xx_hal.h: No such file or directory"/>
 		</list>
 		<list key="replacehistory">
 			<item value="delayTime"/>

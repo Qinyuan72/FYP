@@ -1,6 +1,6 @@
 ################################################################################
 # Automatically-generated file. Do not edit!
-# Toolchain: GNU Tools for STM32 (12.3.rel1)
+# Toolchain: GNU Tools for STM32 (13.3.rel1)
 ################################################################################
 
 -include ../makefile.init
@@ -64,8 +64,8 @@ all: main-build
 main-build: 74HC595_RTOS.elf secondary-outputs
 
 # Tool invocations
-74HC595_RTOS.elf 74HC595_RTOS.map: $(OBJS) $(USER_OBJS) D:\Develop\FYP\STM32CubeIDEworkspace_1.13.0\74HC595_RTOS\STM32L476RGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "74HC595_RTOS.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\Develop\FYP\STM32CubeIDEworkspace_1.13.0\74HC595_RTOS\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="74HC595_RTOS.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+74HC595_RTOS.elf 74HC595_RTOS.map: $(OBJS) $(USER_OBJS) C:\Develop\FYP-master\STM32CubeIDEworkspace_1.13.0\74HC595_RTOS\STM32L476RGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "74HC595_RTOS.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Develop\FYP-master\STM32CubeIDEworkspace_1.13.0\74HC595_RTOS\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="74HC595_RTOS.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

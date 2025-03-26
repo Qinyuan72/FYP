@@ -1,4 +1,4 @@
-10:25:22 **** Build of configuration Debug for project 74HC595_RTOS ****
+00:51:39 **** Incremental Build of configuration Debug for project 74HC595_RTOS ****
 make -j12 all 
 arm-none-eabi-size  74HC595_RTOS.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size  74HC595_RTOS.elf
 Finished building: default.size.stdout
  
 
-10:25:23 Build Finished. 0 errors, 0 warnings. (took 581ms)
+00:51:39 Build Finished. 0 errors, 0 warnings. (took 726ms)
 
